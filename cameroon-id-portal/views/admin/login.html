@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Cameroon ID Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md">
+      <!-- Logo Header -->
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center space-x-2">
+          <i class="fas fa-id-card text-4xl text-green-700"></i>
+          <span class="text-2xl font-bold text-green-800">ID Portal Admin</span>
+        </div>
+        <p class="mt-2 text-gray-600">Cameroon National Identification System</p>
+      </div>
+
+      <!-- Login Card -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="px-8 py-6">
+          <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Administrator Login</h2>
+          
+          <form id="adminLoginForm" class="space-y-6">
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="admin@idportal.cm">
+            </div>
+            
+            <!-- Password -->
+            <div>
+              <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+              <input type="password" id="password" name="password" required
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="••••••••">
+            </div>
+            
+            <!-- Remember Me -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <input id="remember" name="remember" type="checkbox" 
+                  class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                <label for="remember" class="ml-2 block text-sm text-gray-700">
+                  Remember me
+                </label>
+              </div>
+              
+              <div class="text-sm">
+                <a href="#" class="font-medium text-green-600 hover:text-green-500">
+                  Forgot password?
+                </a>
+              </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div>
+              <button type="submit" 
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Footer -->
+        <div class="px-8 py-4 bg-gray-50 border-t border-gray-200">
+          <p class="text-xs text-gray-500 text-center">
+            &copy; 2023 Cameroon National Identification Office. All rights reserved.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Security Notice -->
+      <div class="mt-6 text-center">
+        <p class="text-xs text-gray-500">
+          <i class="fas fa-lock mr-1"></i> Secure government system. Unauthorized access prohibited.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real app, this would make an API call to authenticate
+      window.location.href = '/admin/dashboard';
+    });
+  </script>
+</body>
+</html>
