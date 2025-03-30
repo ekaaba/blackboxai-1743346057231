@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Application | Cameroon National ID</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-green-700 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-id-card text-2xl"></i>
+        <span class="text-xl font-bold">National ID Portal</span>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="/" class="hover:text-yellow-300">Home</a>
+        <a href="/apply" class="hover:text-yellow-300">Apply</a>
+        <a href="/track" class="hover:text-yellow-300 font-semibold">Track</a>
+        <a href="/faq" class="hover:text-yellow-300">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tracking Section -->
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+      <!-- Header -->
+      <div class="bg-green-700 text-white px-6 py-4">
+        <h1 class="text-2xl font-bold">Track Your Application</h1>
+        <p class="text-green-100">Check the status of your national ID card application</p>
+      </div>
+
+      <!-- Tracking Form -->
+      <div class="p-6">
+        <form id="trackingForm" class="space-y-6">
+          <div>
+            <label for="applicationId" class="block text-sm font-medium text-gray-700 mb-1">Application Reference Number*</label>
+            <input type="text" id="applicationId" name="applicationId" required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="e.g. CM-ID-2023-123456">
+          </div>
+          
+          <div>
+            <label for="idNumber" class="block text-sm font-medium text-gray-700 mb-1">National ID Number (if available)</label>
+            <input type="text" id="idNumber" name="idNumber"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="e.g. 123456789012">
+          </div>
+
+          <button type="submit" class="w-full py-2 px-4 bg-green-600 text-white rounded-md hover:bg-green-700">
+            Check Status
+          </button>
+        </form>
+
+        <!-- Status Display (Initially Hidden) -->
+        <div id="statusDisplay" class="mt-8 hidden">
+          <h3 class="text-lg font-semibold mb-4 text-green-800">Application Status</h3>
+          
+          <!-- Status Timeline -->
+          <div class="space-y-4">
+            <!-- Submitted -->
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+                <i class="fas fa-check text-green-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-900">Application Submitted</p>
+                <p class="text-sm text-gray-500">June 15, 2023</p>
+              </div>
+            </div>
+            
+            <!-- In Review -->
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+                <i class="fas fa-check text-green-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-900">Documents Under Review</p>
+                <p class="text-sm text-gray-500">June 18, 2023</p>
+              </div>
+            </div>
+            
+            <!-- Approved -->
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+                <i class="fas fa-check text-green-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-900">Application Approved</p>
+                <p class="text-sm text-gray-500">June 22, 2023</p>
+              </div>
+            </div>
+            
+            <!-- Printing -->
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center">
+                <i class="fas fa-spinner text-yellow-600 animate-spin"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-900">ID Card Printing</p>
+                <p class="text-sm text-gray-500">In Progress</p>
+              </div>
+            </div>
+            
+            <!-- Dispatched -->
+            <div class="flex items-start opacity-50">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-truck text-gray-400"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-500">ID Card Dispatch</p>
+                <p class="text-sm text-gray-400">Pending</p>
+              </div>
+            </div>
+            
+            <!-- Delivered -->
+            <div class="flex items-start opacity-50">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-home text-gray-400"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-500">ID Card Delivery</p>
+                <p class="text-sm text-gray-400">Pending</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Estimated Completion -->
+          <div class="mt-6 p-4 bg-blue-50 rounded-md">
+            <h4 class="text-sm font-medium text-blue-800">Estimated Completion</h4>
+            <p class="text-sm text-blue-600 mt-1">Your ID card is expected to be ready by July 10, 2023 (4-6 weeks processing time)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Form submission handler
+    document.getElementById('trackingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real app, this would make an API call
+      document.getElementById('statusDisplay').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
