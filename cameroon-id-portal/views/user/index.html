@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cameroon National ID Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-green-700 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-id-card text-2xl"></i>
+        <span class="text-xl font-bold">National ID Portal</span>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="/" class="hover:text-yellow-300">Home</a>
+        <a href="/apply" class="hover:text-yellow-300">Apply</a>
+        <a href="/track" class="hover:text-yellow-300">Track</a>
+        <a href="/faq" class="hover:text-yellow-300">FAQ</a>
+      </div>
+      <div class="md:hidden">
+        <button class="mobile-menu-button">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Cameroon National ID Card Services</h1>
+      <p class="text-xl mb-8">Apply for, renew, or track your national identification card</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="/apply" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300">
+          Apply Now
+        </a>
+        <a href="/track" class="bg-white hover:bg-gray-200 text-green-800 font-bold py-3 px-6 rounded-lg transition duration-300">
+          Track Application
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-green-700 mb-4">
+            <i class="fas fa-file-alt text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">New Applications</h3>
+          <p class="text-gray-600">Complete your national ID card application online with our secure platform.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-green-700 mb-4">
+            <i class="fas fa-search text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Track Status</h3>
+          <p class="text-gray-600">Check the progress of your application in real-time.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div class="text-green-700 mb-4">
+            <i class="fas fa-question-circle text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Support Center</h3>
+          <p class="text-gray-600">Get help with any questions about the application process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">National ID Portal</h3>
+          <p>The official online platform for Cameroon National ID card services.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/apply" class="hover:text-yellow-300">Apply Now</a></li>
+            <li><a href="/track" class="hover:text-yellow-300">Track Application</a></li>
+            <li><a href="/faq" class="hover:text-yellow-300">FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contact</h3>
+          <p>Email: support@idportal.cm</p>
+          <p>Phone: +237 222 22 22 22</p>
+        </div>
+      </div>
+      <div class="border-t border-green-700 mt-8 pt-6 text-center">
+        <p>&copy; 2023 Cameroon National Identification Office. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+      // Implement mobile menu toggle logic here
+    });
+  </script>
+</body>
+</html>
