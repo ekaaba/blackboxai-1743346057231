@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Cameroon ID Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+  <!-- Admin Navigation -->
+  <nav class="bg-green-800 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <i class="fas fa-id-card text-2xl mr-2"></i>
+          <span class="text-xl font-bold">ID Portal Admin</span>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="/admin/dashboard" class="px-3 py-2 rounded-md text-sm font-medium bg-green-700">Dashboard</a>
+          <a href="/admin/applications" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Applications</a>
+          <a href="/admin/approvals" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Approvals</a>
+          <a href="/admin/rejections" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Rejections</a>
+          <a href="/admin/settings" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">Settings</a>
+        </div>
+        
+        <!-- User Dropdown -->
+        <div class="ml-4 flex items-center md:ml-6">
+          <div class="ml-3 relative">
+            <div>
+              <button class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" id="user-menu">
+                <span class="sr-only">Open user menu</span>
+                <div class="h-8 w-8 rounded-full bg-green-600 flex items-center justify-center">
+                  <i class="fas fa-user text-white"></i>
+                </div>
+                <span class="ml-2 hidden md:inline">Admin</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-8">
+    <!-- Page Header -->
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+      <div class="text-sm text-gray-500">
+        Last updated: <span id="lastUpdated">Just now</span>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid md:grid-cols-4 gap-6 mb-8">
+      <!-- Pending Applications -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+          <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+            <i class="fas fa-file-alt text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Pending</p>
+            <p class="text-2xl font-semibold text-gray-800">1,248</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Approved Today -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+          <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+            <i class="fas fa-check-circle text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Approved Today</p>
+            <p class="text-2xl font-semibold text-gray-800">342</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rejected Today -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+          <div class="p-3 rounded-full bg-red-100 text-red-600 mr-4">
+            <i class="fas fa-times-circle text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Rejected Today</p>
+            <p class="text-2xl font-semibold text-gray-800">28</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Total Processed -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+          <div class="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
+            <i class="fas fa-chart-line text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Total Processed</p>
+            <p class="text-2xl font-semibold text-gray-800">12,487</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-lg shadow overflow-hidden mb-8">
+      <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-800">Recent Activity</h2>
+      </div>
+      <div class="divide-y divide-gray-200">
+        <!-- Activity Item -->
+        <div class="px-6 py-4">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+              <i class="fas fa-check text-green-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-900">Application approved</p>
+              <p class="text-sm text-gray-500">ID-2023-123456 by John Doe</p>
+              <p class="text-xs text-gray-400 mt-1">10 minutes ago</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Activity Item -->
+        <div class="px-6 py-4">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+              <i class="fas fa-times text-red-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-900">Application rejected</p>
+              <p class="text-sm text-gray-500">ID-2023-123457 by Jane Smith (Incomplete documents)</p>
+              <p class="text-xs text-gray-400 mt-1">25 minutes ago</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Activity Item -->
+        <div class="px-6 py-4">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="fas fa-file-upload text-blue-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-900">New application submitted</p>
+              <p class="text-sm text-gray-500">ID-2023-123458 by Michael Johnson</p>
+              <p class="text-xs text-gray-400 mt-1">1 hour ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Processing Stats -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Status Distribution -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-lg font-medium text-gray-800 mb-4">Application Status Distribution</h2>
+        <div class="h-64">
+          <!-- Chart placeholder -->
+          <div class="flex items-center justify-center h-full bg-gray-50 rounded">
+            <p class="text-gray-500">Status distribution chart will appear here</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Processing Time -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-lg font-medium text-gray-800 mb-4">Average Processing Time</h2>
+        <div class="h-64">
+          <!-- Chart placeholder -->
+          <div class="flex items-center justify-center h-full bg-gray-50 rounded">
+            <p class="text-gray-500">Processing time chart will appear here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Update last updated time
+    function updateLastUpdated() {
+      const now = new Date();
+      document.getElementById('lastUpdated').textContent = 
+        now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    }
+    setInterval(updateLastUpdated, 60000);
+  </script>
+</body>
+</html>
