@@ -14,10 +14,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Database connection
-sequelize.authenticate()
-  .then(() => console.log('Database connected'))
-  .catch(err => console.error('Database connection error:', err));
+// Database connection (commented out for demo)
+// sequelize.authenticate()
+//   .then(() => console.log('Database connected'))
+//   .catch(err => console.error('Database connection error:', err));
 
 // Routes
 app.use('/api/user', userRoutes);
